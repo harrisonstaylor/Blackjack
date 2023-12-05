@@ -1,0 +1,13 @@
+/* styles.css */
+VBox, HBox {
+    -fx-alignment: CENTER;
+}
+
+Button, TextField {
+    -fx-font-size: 14px;
+}
+
+Label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}

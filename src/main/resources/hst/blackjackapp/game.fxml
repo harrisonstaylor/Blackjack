@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?> <!-- Added for layout -->
+<?import javafx.scene.layout.VBox?> <!-- Added for layout -->
+
+<?import java.lang.String?>
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hst.blackjackapp.GameController" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css">
+
+<!--    <stylesheets>-->
+<!--        <String fx:value="./styles.css" />-->
+<!--    </stylesheets>-->
+
+    <top>
+        <VBox spacing="10" alignment="CENTER">
+            <!-- Betting Section -->
+<HBox spacing="10">
+    <Label fx:id="betTag" text="Bet:"/>
+    <TextField fx:id="betTextField" promptText="Enter your bet"/>
+    <Button fx:id="betButton" text="Place Bet" onAction="#handlePlaceBet"/>
+</HBox>
+
+<Label fx:id="tokenLabel"/>
+<Label fx:id="gameStatusLabel" text="Welcome to Blackjack!"/>
+        </VBox>
+        </top>
+
+<center>
+<VBox spacing="10" alignment="CENTER">
+    <!-- Player Section -->
+    <VBox spacing="5">
+        <Label fx:id="playerCardsLabel" />
+        <Label fx:id="playerTotalLabel" />
+    </VBox>
+
+    <!-- Dealer Section -->
+    <VBox spacing="5">
+        <Label fx:id="dealerCardsLabel" />
+        <Label fx:id="dealerTotalLabel" />
+    </VBox>
+
+    <!-- Control Buttons -->
+    <HBox spacing="10">
+        <Button fx:id="hitButton" text="Hit" onAction="#handleHit"/>
+        <Button fx:id="standButton" text="Stand" onAction="#handleStand"/>
+        <Button fx:id="splitButton" text="Split" onAction="#handleSplit"/>
+        <Button fx:id="doubleButton" text="Double" onAction="#handleDouble"/>
+    </HBox>
+
+    <HBox spacing="10">
+        <Label fx:id="finish" text="" />
+    </HBox>
+
+    <HBox spacing="10">
+        <Button fx:id="newGame" text="New Game" onAction="#startNew"/>
+        <Button fx:id="endGame" text="Quit Game" onAction="#close"/>
+    </HBox>
+</VBox>
+</center>
+        </BorderPane>
